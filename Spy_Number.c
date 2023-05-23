@@ -1,31 +1,17 @@
 #include<stdio.h>
-int sum(int n) 
+int main ()
 {
-    int sum=0;
-    while (n!=0) 
-    {
-        sum=sum+n%10;
-        n=n/10;
-    }
-    return sum;
-}
-int product(int n)
-{
-    int product=1;
-    while (n!=0) 
-    {
-        product=product*(n%10);
-        n=n/10;
-    }
-    return product;
-}
-int main()
-{
-    int n;
+    int n,s=0,p=1,d;
     scanf("%d",&n);
-    if (sum(n)==product(n))
-    printf("Spy Number");
+    while(n>0)
+    {
+        d=n%10;
+        s=s+d;
+        p=p*d;
+        n=n/10;
+    }
+    if(s==p)
+        printf("Spy Number");
     else 
-    printf("Not Spy Number");
-    return 0;
+       printf("Not Spy Number");
 }
